@@ -4,7 +4,7 @@ module.exports = {
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
-  rootNotionSpaceId: '25a4f4a8-5ea8-4d5e-9896-cc76128b64c8',
+  rootNotionSpaceId: '25a4f4a85ea84d5e9896cc76128b64c8',
 
   // basic site info (required)
   name: '犹落',
@@ -38,6 +38,8 @@ module.exports = {
   // NOTE: this requires you to set up Google Firebase and add the environment
   // variables specified in .env.example
   isPreviewImageSupportEnabled: false,
+
+  includeNotionIdInUrls: true,
 
   // map of notion page IDs to URL paths (optional)
   // any pages defined here will override their default URL paths
