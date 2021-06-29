@@ -40,8 +40,14 @@ import { bootstrap } from 'lib/bootstrap-client'
 import { fathomId, fathomConfig } from 'lib/config'
 import * as Fathom from 'fathom-client'
 
+import ReactGA from 'react-ga';
+
 if (typeof window !== 'undefined') {
   bootstrap()
+
+  ReactGA.initialize('UA-131443614-1');
+  ReactGA.pageview(window.location.pathname + window.location.search);
+
 }
 
 export default function App({ Component, pageProps }) {
