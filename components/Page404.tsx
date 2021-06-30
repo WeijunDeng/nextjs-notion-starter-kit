@@ -8,6 +8,10 @@ import styles from './styles.module.css'
 export const Page404: React.FC<types.PageProps> = ({ site, pageId, error }) => {
   const title = site?.name || 'Notion Page Not Found'
 
+  React.useEffect(() => {
+    window.location.href = "https://dengweijun.com";
+  }, []);
+
   return (
     <>
       <PageHead site={site} />
