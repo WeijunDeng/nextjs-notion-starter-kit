@@ -12,7 +12,7 @@ module.exports = {
   author: 'dengweijun',
 
   // open graph metadata (optional)
-  description: '不雨花犹落，无风絮自飞。',
+  description: '邓伟俊的个人博客',
   // socialImageTitle: 'Transitive Bullshit',
   // socialImageSubtitle: 'Hello World! 👋',
 
