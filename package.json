@@ -1,10 +1,10 @@
 {
   "name": "nextjs-notion-starter-kit",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "description": "The perfect starter kit for building beautiful websites with Next.js and Notion.",
-  "author": "Travis Fischer <travis@transitivebullsh.it>",
-  "repository": "transitive-bullshit/nextjs-notion-starter-kit",
+  "author": "WeijunDeng <dwjchn@gmail.com>",
+  "repository": "WeijunDeng/nextjs-notion-starter-kit",
   "license": "MIT",
   "engines": {
     "node": ">=10"
