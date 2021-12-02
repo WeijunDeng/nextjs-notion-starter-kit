@@ -7,6 +7,10 @@ import styles from './styles.module.css'
 export const ErrorPage: React.FC<{ statusCode: number }> = ({ statusCode }) => {
   const title = 'Error'
 
+  React.useEffect(() => {
+    window.location.href = "https://dengweijun.com";
+  }, []);
+
   return (
     <>
       <PageHead />
