@@ -23,14 +23,14 @@ export const mapPageUrl =
   }
 
 export const getCanonicalPageUrl =
-  (site: Site, recordMap: ExtendedRecordMap) =>
+  (domain: string, rootNotionPageId: string, recordMap: ExtendedRecordMap) =>
   (pageId = '') => {
     const pageUuid = parsePageId(pageId, { uuid: true })
 
-    if (uuidToId(pageId) === site.rootNotionPageId) {
-      return `https://${site.domain}`
+    if (uuidToId(pageId) === rootNotionPageId) {
+      return `${domain}`
     } else {
-      return `https://${site.domain}/${getCanonicalPageId(pageUuid, recordMap, {
+      return `${domain}/${getCanonicalPageId(pageUuid, recordMap, {
         uuid
       })}`
     }

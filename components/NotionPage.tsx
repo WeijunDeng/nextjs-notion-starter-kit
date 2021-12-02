@@ -122,7 +122,15 @@ export const NotionPage: React.FC<types.PageProps> = ({
   const siteMapPageUrl = mapPageUrl(site, recordMap, searchParams)
 
   const canonicalPageUrl =
-    !config.isDev && getCanonicalPageUrl(site, recordMap)(pageId)
+    !config.isDev && getCanonicalPageUrl(config.host, site.rootNotionPageId, recordMap)(pageId);
+  
+    if (!config.isDev && typeof window !== "undefined" && typeof history !== "undefined") {
+    if (site && recordMap) {
+      if (canonicalPageUrl && canonicalPageUrl.length && !window.location.href.includes(canonicalPageUrl)) {
+        history.pushState({},"",canonicalPageUrl);
+      }
+    }
+  }
 
   // const isRootPage =
   //   parsePageId(block.id) === parsePageId(site.rootNotionPageId)
