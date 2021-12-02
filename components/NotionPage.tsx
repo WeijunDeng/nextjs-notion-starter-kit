@@ -125,11 +125,14 @@ export const NotionPage: React.FC<types.PageProps> = ({
     !config.isDev && getCanonicalPageUrl(config.host, site.rootNotionPageId, recordMap)(pageId);
   
     if (!config.isDev && typeof window !== "undefined" && typeof history !== "undefined") {
-    if (site && recordMap) {
-      if (canonicalPageUrl && canonicalPageUrl.length && !window.location.href.includes(canonicalPageUrl)) {
-        history.pushState({},"",canonicalPageUrl);
+      if (window.location.href.includes(site.rootNotionPageId)) {
+        history.pushState({},"", config.host);
+      } 
+      else if (site && recordMap) {
+        if (canonicalPageUrl && canonicalPageUrl.length && !window.location.href.includes(canonicalPageUrl)) {
+          history.pushState({},"", canonicalPageUrl);
+        }
       }
-    }
   }
 
   // const isRootPage =
