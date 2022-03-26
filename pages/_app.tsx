@@ -54,12 +54,12 @@ export default function App({ Component, pageProps }) {
   const router = useRouter()
 
   React.useEffect(() => {
+    function onRouteChangeComplete() {
+      Fathom.trackPageview()
+    }
+
     if (fathomId) {
       Fathom.load(fathomId, fathomConfig)
-
-      function onRouteChangeComplete() {
-        Fathom.trackPageview()
-      }
 
       router.events.on('routeChangeComplete', onRouteChangeComplete)
 
@@ -67,7 +67,7 @@ export default function App({ Component, pageProps }) {
         router.events.off('routeChangeComplete', onRouteChangeComplete)
       }
     }
-  }, [])
+  }, [router.events])
 
   return <Component {...pageProps} />
 }

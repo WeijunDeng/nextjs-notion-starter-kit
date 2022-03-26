@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   // where it all starts -- the site's root Notion page (required)
   rootNotionPageId: 'd22d4c79349b4fdc854b32df0e6c465e',
 
@@ -35,9 +35,12 @@ module.exports = {
   utterancesGitHubRepo: 'WeijunDeng/utterances',
 
   // whether or not to enable support for LQIP preview images (optional)
-  // NOTE: this requires you to set up Google Firebase and add the environment
-  // variables specified in .env.example
-  isPreviewImageSupportEnabled: false,
+  isPreviewImageSupportEnabled: true,
+
+  // whether or not redis is enabled for caching generated preview images (optional)
+  // NOTE: if you enable redis, you need to set the `REDIS_HOST` and `REDIS_PASSWORD`
+  // environment variables. see the readme for more info
+  isRedisEnabled: false,
 
   includeNotionIdInUrls: false,
 
