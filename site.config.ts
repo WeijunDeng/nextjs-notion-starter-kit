@@ -31,10 +31,10 @@ export default siteConfig({
 
   // image CDN host to proxy all image requests through (optional)
   // NOTE: this requires you to set up an external image proxy
-  imageCDNHost: null,
+  // imageCDNHost: null,
 
   // Utteranc.es comments via GitHub issue comments (optional)
-  utterancesGitHubRepo: 'WeijunDeng/utterances',
+  // utterancesGitHubRepo: 'WeijunDeng/utterances',
 
   // whether or not to enable support for LQIP preview images (optional)
   isPreviewImageSupportEnabled: true,

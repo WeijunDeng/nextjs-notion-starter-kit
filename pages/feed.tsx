@@ -56,7 +56,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     const description =
       getPageProperty<string>('Description', block, recordMap) ||
       config.description
-    const url = getCanonicalPageUrl(config.site, recordMap)(pageId)
+    const url = getCanonicalPageUrl(config.host, config.rootNotionPageId, recordMap)(pageId)
     const lastUpdatedTime = getPageProperty<number>(
       'Last Updated',
       block,
