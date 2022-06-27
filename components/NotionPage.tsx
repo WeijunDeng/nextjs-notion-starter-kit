@@ -30,6 +30,7 @@ import { PageAside } from './PageAside'
 import { Footer } from './Footer'
 import { NotionPageHeader } from './NotionPageHeader'
 import { GitHubShareButton } from './GitHubShareButton'
+import { ReactUtterances } from './ReactUtterances'
 
 import styles from './styles.module.css'
 
@@ -258,6 +259,18 @@ export const NotionPage: React.FC<types.PageProps> = ({
     getPageProperty<string>('Description', block, recordMap) ||
     config.description
 
+  let comments: React.ReactNode = null
+  if (config.utterancesGitHubRepo) {
+    comments = (
+      <ReactUtterances
+        repo={config.utterancesGitHubRepo}
+        issueMap='issue-term'
+        issueTerm='title'
+        theme={isDarkMode ? 'photon-dark' : 'github-light'}
+      />
+    )
+  }
+
   return (
     <>
       <PageHead
@@ -293,6 +306,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         mapPageUrl={siteMapPageUrl}
         mapImageUrl={mapImageUrl}
         searchNotion={config.isSearchEnabled ? searchNotion : null}
+        pageFooter={comments}
         pageAside={pageAside}
         footer={footer}
       />
