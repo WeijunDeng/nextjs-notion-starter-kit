@@ -39,7 +39,7 @@ if (!isServer) {
   bootstrap()
 
   ReactGA4.initialize("G-C6S63G1454");
-  ReactGA4.send(window.location.pathname + window.location.search);
+  ReactGA4.send("pageview");
 
   ReactGA.initialize('UA-131443614-1');
   ReactGA.pageview(window.location.pathname + window.location.search);
