@@ -25,6 +25,7 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import posthog from 'posthog-js'
 import ReactGA from 'react-ga'
+import ReactGA4 from "react-ga4";
 import { bootstrap } from 'lib/bootstrap-client'
 import {
   isServer,
@@ -36,6 +37,9 @@ import {
 
 if (!isServer) {
   bootstrap()
+
+  ReactGA4.initialize("G-321330417");
+  ReactGA4.send(window.location.pathname + window.location.search);
 
   ReactGA.initialize('UA-131443614-1');
   ReactGA.pageview(window.location.pathname + window.location.search);
