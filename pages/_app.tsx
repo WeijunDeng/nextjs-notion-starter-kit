@@ -38,7 +38,7 @@ import {
 if (!isServer) {
   bootstrap()
 
-  ReactGA4.initialize("G-321330417");
+  ReactGA4.initialize("G-C6S63G1454");
   ReactGA4.send(window.location.pathname + window.location.search);
 
   ReactGA.initialize('UA-131443614-1');
