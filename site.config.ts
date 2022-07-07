@@ -6,7 +6,7 @@ export default siteConfig({
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
-  rootNotionSpaceId: '',
+  rootNotionSpaceId: '25a4f4a85ea84d5e9896cc76128b64c8',
 
   // basic site info (required)
   name: '犹落',
