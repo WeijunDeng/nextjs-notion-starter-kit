@@ -237,6 +237,17 @@ export const NotionPage: React.FC<types.PageProps> = ({
   const canonicalPageUrl =
     !config.isDev && getCanonicalPageUrl(site, recordMap)(pageId)
 
+  if (!config.isDev && typeof window !== "undefined" && typeof history !== "undefined") {
+      if (window.location.href.includes(site.rootNotionPageId)) {
+        history.pushState({},"", config.host);
+      } 
+      else if (site && recordMap) {
+        if (canonicalPageUrl && canonicalPageUrl.length && !window.location.href.includes(canonicalPageUrl)) {
+          history.pushState({},"", canonicalPageUrl);
+        }
+      }
+  }
+
   const socialImage = mapImageUrl(
     getPageProperty<string>('Social Image', block, recordMap) ||
       (block as PageBlock).format?.page_cover ||

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { GetStaticProps } from 'next'
-import { isDev, domain } from 'lib/config'
+import { isDev, domain, site } from 'lib/config'
 import { getSiteMap } from 'lib/get-site-map'
 import { resolveNotionPage } from 'lib/resolve-notion-page'
 import { PageProps, Params } from 'lib/types'
@@ -33,9 +33,9 @@ export async function getStaticPaths() {
   const siteMap = await getSiteMap()
 
   const staticPaths = {
-    paths: Object.keys(siteMap.canonicalPageMap).filter(pageId => pageId.length > 0).map((pageId) => ({
+    paths: Object.keys(siteMap.canonicalPageMap).map((pageId) => ({
       params: {
-        pageId
+        pageId: pageId.length > 0 ? pageId : site.rootNotionPageId
       }
     })),
     // paths: [],
