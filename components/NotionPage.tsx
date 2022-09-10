@@ -154,6 +154,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
   error,
   pageId
 }) => {
+  recordMap["signed_urls"] = {} // fix image url
+
   const router = useRouter()
   const lite = useSearchParam('lite')
 
